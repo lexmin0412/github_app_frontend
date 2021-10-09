@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="testFetch()">测试</button>
+	<div class="info-box">
+		<div class="name" id="name">
+			用户名：
+		</div>
+		<div class="email" id="email">
+			邮箱：
+		</div>
+		<div class="followers" id="followers">
+			关注者：
+		</div>
+		<div class="followings" id="followings">
+			正在关注：
+		</div>
+		<div class="avatar" id="avatar">
+			头像：
+			<img src="" alt="">
+		</div>
+	</div>
+	<script>
+		function testFetch() {
+			fetch('http://localhost:3002/github/user/lexmin').then((res)=>{
+				return res.json()
+			}).then((res)=>{
+				console.log('返回结果', res);
+			})
+		}
+	</script>
+</body>
+</html>
